@@ -69,10 +69,8 @@ public class LoadBalancerStatusResource extends RestResource {
         Response.StatusType status;
         switch (lbStatus) {
             case ALIVE:
-                status = Response.Status.OK;
-                break;
             case THROTTLED:
-                status = new TooManyRequestsStatus();
+                status = Response.Status.OK;
                 break;
             default:
                 status = Response.Status.SERVICE_UNAVAILABLE;

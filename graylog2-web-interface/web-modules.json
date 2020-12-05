@@ -1,0 +1,24 @@
+{
+  "modules": [
+    {
+      "name": "graylog2-server",
+      "path": "/Users/Herb/Git/adtalos/devops/graylog2-server/graylog-project-repos/graylog2-server/graylog2-web-interface"
+    },
+    {
+      "name": "graylog-plugin-collector",
+      "path": "/Users/Herb/Git/adtalos/devops/graylog2-server/graylog-project-repos/graylog-plugin-collector"
+    },
+    {
+      "name": "graylog-plugin-aws",
+      "path": "/Users/Herb/Git/adtalos/devops/graylog2-server/graylog-project-repos/graylog-plugin-aws"
+    },
+    {
+      "name": "graylog-plugin-threatintel",
+      "path": "/Users/Herb/Git/adtalos/devops/graylog2-server/graylog-project-repos/graylog-plugin-threatintel"
+    },
+    {
+      "name": "graylog-plugin-integrations",
+      "path": "/Users/Herb/Git/adtalos/devops/graylog2-server/graylog-project-repos/graylog-plugin-integrations"
+    }
+  ]
+}

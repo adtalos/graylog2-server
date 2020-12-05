@@ -78,7 +78,6 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
@@ -297,10 +296,7 @@ public class KafkaTransport extends ThrottleableTransport {
 
         private Optional<ConsumerRecords<byte[], byte[]>> tryPoll() {
             try {
-                // Workaround https://issues.apache.org/jira/browse/KAFKA-4189 by calling wakeup()
-                final ScheduledFuture<?> future = scheduler.schedule(consumer::wakeup, 2000, TimeUnit.MILLISECONDS);
                 final ConsumerRecords<byte[], byte[]> consumerRecords = consumer.poll(1000);
-                future.cancel(true);
 
                 return Optional.of(consumerRecords);
             } catch (WakeupException e) {
