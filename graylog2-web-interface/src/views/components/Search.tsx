@@ -82,11 +82,11 @@ const SearchArea: StyledComponent<{}, void, any> = styled(AppContentGrid)`
   }
 `;
 
-const SearchLayoutContainer = styled.div`
+const SearchLayoutContainer = styled.div(({ isDashboard }) => css`
   height: 100%;
   display: grid;
-  grid-template-rows: min-content auto min-content;
-`;
+  ${isDashboard ? 'grid-template-rows: min-content auto min-content;' : 'grid-template-rows: min-content min-content auto min-content;'}
+`);
 
 const ConnectedSidebar = connect(
   Sidebar,
